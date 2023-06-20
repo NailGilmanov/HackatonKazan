@@ -29,7 +29,7 @@ setTimeout(() => {
                 console.log(d)
                 if (d !== false) {
                     sessionStorage.setItem("uuid", String(d))
-                    location.href = "index.html"
+                    // location.href = "index.html"
                 }
             })
         } else {
@@ -37,9 +37,10 @@ setTimeout(() => {
                 console.log(d)
                 if (d !== false) {
                     sessionStorage.setItem("uuid", String(d))
-                    location.href = "index.html"
+                    // location.href = "index.html"
                 }
             })
+            load_module('../pages/analysis.html')
         }
     }  
 }, 1000)
