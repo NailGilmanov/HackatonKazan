@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Моби!</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../css/authentication.css">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+    </head>
+    <body>
+        <div id="auth-block">
+            <div class="wrapper">
+                <h1>Регистрация</h1>
+                <input type="text" placeholder="Имя пользователя" id="username">
+                <input type="text" placeholder="Пароль" id="password">
+                <input type="text" placeholder="Повторите пароль" id="password_insurance">
+                <textarea type="text" placeholder="Немного о себе" id="description"></textarea>
+                <p id="cringy-message">Уже есть аккаунт? <span onclick="sign_in()">Войти.</span></p>
+                <div id="jumbo-button" style="position: absolute; bottom: 100px; width: 90vw;">
+                    Регистрация
+                </div>
+            </div>
+        </div>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

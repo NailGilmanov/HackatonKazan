@@ -1,0 +1,20 @@
+.bottom-bar {
+    height: 11vh;
+    z-index: 1000;
+    background: rgba(24, 23, 23, 0.83);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+}
+
+.bottom-bar > div {
+    margin: 0 auto;
+    padding: 3vh;
+}
+
+.bottom-bar > div > img {
+    height: 4vh;
+    width: 5vh;
+}

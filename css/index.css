@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    opacity: 0;
+    display: none;
+    background: transparent;
+}
+
+body {
+    background: #121212 !important;
+}
+
+#modular-content {
+    background-color: #121212;
+    color: #FCFCFC;
+}
+
+img {
+    pointer-events: none;
+}
+
+#modular-content {
+    opacity: 0;
+}

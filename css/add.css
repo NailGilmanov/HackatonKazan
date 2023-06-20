@@ -1,0 +1,15 @@
+.add-wrapper {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+span {
+    color: #408BFE
+}
+
+.add--tiitle {
+    font-weight: 600;
+    margin-bottom: 4vh;
+}

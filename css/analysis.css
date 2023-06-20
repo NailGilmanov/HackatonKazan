@@ -1,0 +1,22 @@
+.analysis-wrapper {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+span {
+    color: #408BFE
+}
+
+.analysis--tiitle {
+    font-weight: 600;
+    margin-bottom: 4vh;
+}
+
+#myChart {
+    height: 25vh !important;
+    width: 110vw !important;
+    margin-left: -12vw;
+    margin-top: 60px;
+}
