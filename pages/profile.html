@@ -3,5 +3,56 @@
         <div><img src="../img/profile-img.png" alt="profile pic"></div>
         <h3 id="nameProfile">Загрузка...</h3>
         <p id="descriptionProfile"></p>
+    </div><hr style="background-color: white;">
+    <div class='wrapper__form'>
+        <h2 class='wrapper__h2'>Давайте сделаем что-нибудь вместе ?</h2>
+        <p class='wrapper__text'>Оставьте нам свои контактные данные и мы c вами свяжемся</p>
+        <div>
+            <form action="https://api.web3forms.com/submit" method="POST" class='form'>
+                <input type="hidden" name="access_key" value="69d63dec-108c-4a88-b54c-2732247f75bb"/>
+                <label class='label'>
+                    Имя, фамилия: <span class='red'>*</span><br/>
+                    
+                    <div class='col'><input class='input_1' placeholder='Введите имя'/>
+                    </div>
+                </label>
+    
+                <div class='two_form'>
+    
+                    <label class='label'>
+                        E-mail: <span class='red'>*</span> <br/>
+    
+                       <div class='col'> <input class='input_2' type="email" placeholder="hello123@mail.ru"
+                        /></div>
+                    </label>
+    
+    
+                    <label class='label'>
+                        Телефон: <span class='red'>*</span><br/>
+    
+                       <div class='col'> <input class='input_2' type="tel"
+                               placeholder="+7 (***) *** - ** - **"
+                        /></div>
+                    </label>
+                </div>
+    
+                <label class='label'>
+                    Сообщение: <br/>
+    
+                   <div class='col'> <input class='input_1' type="text" placeholder="Введите ваше сообщение"/> </div>
+                </label>
+    
+    
+                <label class='check_text'>
+                    <input class='input_3' type="checkbox" name="accept" value="yes"/> Я даю свое согласие на обработку персональных данных <a href="/rules" class='go'>(перейти)</a>
+    
+                </label>
+    
+                <div class='btnWrapper'>
+                    <input type="submit" disabled={!isValid}}/>
+                </div>
+            </form>
+    
+        </div>
     </div>
 </div>

@@ -20,7 +20,7 @@
     height: 150px;
     overflow: hidden;
     border-radius: 50%;
-    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 20px rgb(255, 255, 255);
 }
 
 .profile-wrapper .brief-channel div img {
@@ -47,7 +47,7 @@
     font-size: 19px;
     font-weight: 600;
     margin-top: 10px;
-    border: 2px solid #000;
+    border: 2px solid #ffffff;
 }
 
 .profile-wrapper h4 {
@@ -75,53 +75,182 @@
     display: none;
 }
 
-.select-selected {
-    border-radius: 15px;
+.wrapper__form {
+    margin-top: 40px;
 }
 
-.select-selected:after {
-    position: absolute;
-    content: "";
-    top: 22px;
-    right: 19px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #8A15E7 transparent transparent transparent;
+.wrapper__h2 {
+    position: relative;
+    font-family: 'Ruda', sans-serif;
+    font-weight: 700;
+    font-size: 6.5vw;
+    line-height: 110px;
+    letter-spacing: 0.015em;
+    text-transform: lowercase;
+    color: var(--color-additional);
+    margin-left: 75px;
+    margin-bottom: 0;
 }
 
-.select-selected.select-arrow-active:after {
-    top: 13px;
-    border-color: transparent transparent #8A15E7 transparent;
+.wrapper__text {
+    font-family: 'Ruda', sans-serif;
+    font-weight: 400;
+    font-size: 1.3vw;
+    line-height: 24px;
+    letter-spacing: 0.095em;
+    text-transform: lowercase;
+    color: var(--color-additional);
+    margin-left: 75px;
+    margin-bottom: 80px;
 }
 
-.select-items div,.select-selected {
-    color: #000;
-    font-size: 19px;
-    padding: 10px 16px;
+.form {
+    width: 60vw;
+    height: 60vh;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 230px;
 }
 
-
-.select-items {
-    left: 0;
-    right: 0;
-    z-index: 99;
-    height: 198px;
-    overflow-y: scroll;
-    position: absolute;
-    border-radius: 15px;
-    top: calc(100% + 10px);
+.label {
+    font-family: 'Ruda', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.015em;
+    color: var(--color-additional);
 }
 
-.select-hide {
-    height: 0;
-    display: none;
+.input_1 {
+    font-family: 'Ruda', sans-serif;
+    font-size: 15px;
+    padding-left: 15px;
+    width: 35vw;
+    height: 5vh;
+    border: none;
+    border-left: 1px solid var(--color-additional);
+    border-bottom: 1px solid var(--color-additional);
+    background-color: var(--color);
+    margin-bottom: 40px;
+    margin-top: 15px;
+
 }
 
-.select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
+.two_form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vw;
 }
 
-.profile-wrapper #cards {
-    margin-bottom: 150px;
+.input_2 {
+    font-family: 'Ruda', sans-serif;
+    font-size: 15px;
+    padding-left: 15px;
+    width: 15vw;
+    height: 5vh;
+    border: none;
+    border-left: 1px solid var(--color-additional);
+    border-bottom: 1px solid var(--color-additional);
+    background-color: var(--color);
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+input:focus {
+    opacity: 0.3;
+}
+
+.btnWrapper {
+    padding: 10px;
+    color: var(--color);
+    width: 300px;
+    background-color: var(--color-additional);
+    cursor: pointer;
+    transition: .5s;
+}
+.submit {
+    background-color: var(--color-additional);
+    border: none;
+}
+
+.btnInner {
+    padding: 14px;
+    width: 300px;
+    border: 1px solid var(--color);
+    text-align: center;
+    font-size: 18px;
+    color: var(--color);
+}
+
+.btnInner,
+.submit,
+.btnWrapper:hover {
+    cursor: pointer;
+}
+
+.btnInner,
+.submit,
+.btnWrapper:active {
+    cursor: pointer;
+}
+
+.errors {
+    color:#e1271d;
+    margin:0;
+    padding: 0;
+}
+.check_text {
+    font-family: 'Ruda';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.015em;
+    color: var(--color-additional);
+    margin-bottom: 70px;
+}
+.go {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.go:hover {
+    text-decoration: underline;
+    color: var(--light-gray);
+}
+input[type=checkbox] {
+    border: 3px solid var(--color-additional);
+    padding: 0.5em;
+}
+
+.red {
+    color: #e1271d;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 780px) {
+    .input_1 {
+        width: 70vw;
+    }
+
+    .form {
+        margin: auto 30px;
+    }
+
+    .input_2 {
+        width: 30vw;
+    }
+
+    .two_form {
+        gap: 4.5vw;
+    }
+    
+    .btnWrapper {
+       margin: 0 10px;
+    }
 }

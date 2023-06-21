@@ -54,6 +54,7 @@ function load_module(url) {
                 let price = document.getElementById('expendPrice').value
                 let category = document.getElementById('expendCategory').value
                 request_data('new_expend/' + name + '/' + category + '/' + price + '/' + sessionStorage.getItem("uuid"))
+                document.querySelector('.success-message').style.display = 'block'
                 document.getElementById('expendName').value = ''
                 document.getElementById('expendPrice').value = ''
                 document.getElementById('expendCategory').value = ''
@@ -66,7 +67,7 @@ function load_module(url) {
             data: {
                 labels: ['Развлечения', 'Фастфуд', 'Торговые центры', 'Спорт', 'Путешествия'],
                 datasets: [{
-                    data: [27.92, 17.53, 14.94, 26.62, 12.99],
+                    data: [27.92, 17.53, 14.94, 26.62, 10.99],
                     backgroundColor: ['#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600'],
                     borderWidth: 0.1 ,
                     borderColor: '#ddd'
