@@ -1,14 +1,15 @@
 let current_tab = ""
 let modular_content = document.getElementById("modular-content")
 
-let server_ip = "https://f3a2-178-213-240-41.ngrok-free.app/"
+let server_ip = "https://1ed1-178-213-240-40.ngrok-free.app/"
 let user_id = sessionStorage.getItem("uuid")
 
 function request_data(method, success, fail = () => {}) {
     const request = new XMLHttpRequest();
     request.onload = function() {
         if (request.status === 200) {
-            let d = String(JSON.parse(request.response)).replaceAll("False", "false").replaceAll("True", "true").replaceAll("'", "\"")
+            let d = String(request.response)
+            console.log(d)
             success(JSON.parse(d))
         } else {
             fail()
@@ -37,6 +38,11 @@ function set_root_var(name, value) {
 }
 
 function load_module(url) {
+    console.log('work')
+        request_data("get_user/" + sessionStorage.getItem("uuid"), (d) => {
+            document.getElementById('nameProfile').innerHTML = d["name"]
+            document.getElementById('descriptionProfile').innerHTML = d["about"]
+        })
     setTimeout(() => { 
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
