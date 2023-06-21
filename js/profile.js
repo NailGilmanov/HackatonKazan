@@ -1,5 +1,4 @@
 request_data("get_user/" + sessionStorage.getItem("uuid"), (d) => {
-    document.querySelector(".profile-wrapper .brief-channel img").src = "/loc-images/ava.png"
     document.querySelector(".profile-wrapper .brief-channel h3").innerText = d["name"]
     document.querySelector(".profile-wrapper .description").innerText = d["about"]
 })
