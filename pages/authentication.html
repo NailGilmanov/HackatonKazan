@@ -52,7 +52,8 @@
                         if (d !== false) {
                             sessionStorage.setItem("uuid", String(d))
                             location.href = "index.html"
-                        }
+                            document.getElementById('bottom-bar').style.display = 'grid'
+                        } 
                     })
                 } else {
                     request_data(`register/${username.value}/${password.value}/${password_insurance.value}/${description.value}`, (d) => {
@@ -60,6 +61,7 @@
                         if (d !== false) {
                             sessionStorage.setItem("uuid", String(d))
                             location.href = "index.html"
+                            document.getElementById('bottom-bar').style.display = 'grid'
                         }
                     })
                 }

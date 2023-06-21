@@ -28,6 +28,7 @@ setTimeout(() => {
             request_data(`login/${username.value}/${password.value}`, (d) => {
                 console.log(d)
                 if (d !== false) {
+                    document.getElementById('bottom-bar').style.display = 'grid'
                     sessionStorage.setItem("uuid", String(d))
                     // location.href = "index.html"
                 }
@@ -36,6 +37,7 @@ setTimeout(() => {
             request_data(`register/${username.value}/${password.value}/${password_insurance.value}/${description.value}`, (d) => {
                 console.log(d)
                 if (d !== false) {
+                    document.getElementById('bottom-bar').style.display = 'grid'
                     sessionStorage.setItem("uuid", String(d))
                     // location.href = "index.html"
                 }

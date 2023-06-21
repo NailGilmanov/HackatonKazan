@@ -1,7 +1,7 @@
 let current_tab = ""
 let modular_content = document.getElementById("modular-content")
 
-let server_ip = "https://4869-178-213-240-40.ngrok-free.app/"
+let server_ip = "https://55d2-178-213-240-40.ngrok-free.app/"
 let user_id = sessionStorage.getItem("uuid")
 
 function request_data(method, success, fail = () => {}) {
@@ -39,16 +39,19 @@ function set_root_var(name, value) {
 
 function load_module(url) {
     console.log('work')
-        request_data("get_user/" + sessionStorage.getItem("uuid"), (d) => {
-            document.getElementById('nameProfile').innerHTML = d["name"]
-            document.getElementById('descriptionProfile').innerHTML = d["about"]
-        })
+    request_data('get_expend_some/' + sessionStorage.getItem("uuid"), (d) => {
+        document.getElementById('wasteOfAllTime').innerHTML = String(d) + " ₽" 
+    })
+    request_data("get_user/" + sessionStorage.getItem("uuid"), (d) => {
+        document.getElementById('nameProfile').innerHTML = d["name"]
+        document.getElementById('descriptionProfile').innerHTML = d["about"]
+    })
     setTimeout(() => { 
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
-                labels: ['Развлечения', 'Фастфуд', 'Торговые центры', 'Спорт', 'Путишествия'],
+                labels: ['Развлечения', 'Фастфуд', 'Торговые центры', 'Спорт', 'Путешествия'],
                 datasets: [{
                     data: [27.92, 17.53, 14.94, 26.62, 12.99],
                     backgroundColor: ['#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600'],
