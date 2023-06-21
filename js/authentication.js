@@ -33,7 +33,7 @@ setTimeout(() => {
                 }
             })
         } else {
-            request_data(`register/${username.value}/${password.value}/${password_insurance.value}`, (d) => {
+            request_data(`register/${username.value}/${password.value}/${password_insurance.value}/${description.value}`, (d) => {
                 console.log(d)
                 if (d !== false) {
                     sessionStorage.setItem("uuid", String(d))

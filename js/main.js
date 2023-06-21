@@ -1,7 +1,7 @@
 let current_tab = ""
 let modular_content = document.getElementById("modular-content")
 
-let server_ip = "https://da2e-2a00-1fa1-84bc-bda-d403-fe17-b51d-a6e5.ngrok-free.app/"
+let server_ip = "https://e18b-2a00-1fa1-c65d-bad4-fcb9-2fe2-a580-a8dd.ngrok-free.app/"
 let user_id = sessionStorage.getItem("uuid")
 
 function request_data(method, success, fail = () => {}) {
@@ -17,6 +17,11 @@ function request_data(method, success, fail = () => {}) {
     request.open("GET", server_ip+method, true);
     request.send();
 }
+
+let video = document.getElementById('preview')
+setTimeout(() => {
+    video.style.marginLeft = "-500px"
+}, 3000)
 
 function animate_css(el, props, trans, callback = () => {}) {
     el.animate(props, trans).onfinish = (e) => {

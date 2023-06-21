@@ -1,67 +1,10 @@
 <div class="profile-wrapper">
     <div class="brief-channel">
-        <div><img src="" alt=""></div>
+        <div><img src="../img/profile-img.png" alt="profile pic"></div>
         <h3></h3>
         <p></p>
     </div>
     <h4>Профиль</h4>
     <p class="description"></p>
-    <h4>Мои мероприятия</h4>
-    <button onclick="open_sliding_overlay_v2('/loc-images/placeholder.png', 'Название мероприятия', '31.12.1990, 18:00', 'Нажмите, чтобы редактировать описание мероприятия', () => {}, 'new-event')">􀅼 Создать новое</button>
-    <div id="cards">
-
-    </div>
-</div>
-
-<div class="sliding-overlay" id="new-event">
-    <div class="sliding-overlay-wrapper">
-        <div class="back-button" onclick="close_sliding_overlay(document.getElementById('new-event'))"><p>􀆄</p></div>
-        <div class="cover">
-            <img alt="">
-        </div>
-        <h3 class="heading" id="event_name" contenteditable></h3>
-        <p class="date" id="date" contenteditable></p>
-        <div class="tab-content">
-            <div class="custom-select">
-                <select id="category">
-                    <option value="0">Выберите категорию</option>
-                    <option value="1">Спорт</option>
-                    <option value="2">Киберспорт</option>
-                    <option value="3">Наука</option>
-                    <option value="4">Фитнес</option>
-                    <option value="5">Концерт</option>
-                    <option value="6">Развлечения</option>
-                    <option value="7">Квест</option>
-                    <option value="8">Кино</option>
-                    <option value="9">Искусство</option>
-                    <option value="10">Мультфильмы</option>
-                    <option value="11">Другое</option>
-                </select>
-            </div>
-            <p contenteditable id="description">Нажмите, чтобы редактировать описание мероприятия</p>
-            <p style="font-size: 20px; margin-top: 15px;margin-bottom: 15px;font-variant: all-small-caps; text-decoration: underline" id="location" contenteditable>г. Москва, ул. Пушкина, д. 30</p>
-        </div>
-        <div id="jumbo-button">
-            Создать!
-        </div>
-    </div>
-</div>
-
-<div class="sliding-overlay" id="event-info">
-    <div class="sliding-overlay-wrapper">
-        <div class="back-button" onclick="close_sliding_overlay(document.getElementById('event-info'))"><p>􀆄</p></div>
-        <div class="cover">
-            <img src="/loc-images/themoon.png" alt="">
-        </div>
-        <h3 class="heading"></h3>
-        <p class="date"></p>
-        <div class="tab-content">
-            <h4>Описание</h4>
-            <p></p>
-            <h4>Отзывы</h4>
-            <div class="comments" id="comments">
-            </div>
-        </div>
-    </div>
 </div>
 select.js&profile.js&sliding_overlay.js&event_cards.js

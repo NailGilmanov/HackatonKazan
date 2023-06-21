@@ -28,3 +28,14 @@ img {
 #modular-content {
     opacity: 0;
 }
+
+#preview {
+    height: 100vh;
+    width: 130vw !important;
+    z-index: 10000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -20px;
+    transition: .5s;
+}

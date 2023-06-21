@@ -3,7 +3,6 @@
     height: 100vh;
     margin: 0 auto;
     overflow-y: auto;
-    background: #fff;
 }
 
 .profile-wrapper .brief-channel {
@@ -21,7 +20,6 @@
     height: 150px;
     overflow: hidden;
     border-radius: 50%;
-    background: #f3f3f3;
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -48,7 +46,6 @@
     border-radius: 18px;
     font-size: 19px;
     font-weight: 600;
-    background: #fff;
     margin-top: 10px;
     border: 2px solid #000;
 }
@@ -80,7 +77,6 @@
 
 .select-selected {
     border-radius: 15px;
-    background: #f3f3f3;
 }
 
 .select-selected:after {
@@ -113,7 +109,6 @@
     height: 198px;
     overflow-y: scroll;
     position: absolute;
-    background: #f3f3f3;
     border-radius: 15px;
     top: calc(100% + 10px);
 }
