@@ -20,7 +20,7 @@ function request_data(method, success, fail = () => {}) {
 
 let video = document.getElementById('preview')
 setTimeout(() => {
-    video.style.marginLeft = "-500px"
+    video.style.marginLeft = "-150vw"
 }, 3000)
 
 function animate_css(el, props, trans, callback = () => {}) {
