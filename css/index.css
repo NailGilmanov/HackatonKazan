@@ -39,3 +39,8 @@ img {
     margin-left: -20px;
     transition: .5s;
 }
+
+.success-message {
+    color: green;
+    margin-top: 20px;
+}

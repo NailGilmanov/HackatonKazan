@@ -1,7 +1,7 @@
 let current_tab = ""
 let modular_content = document.getElementById("modular-content")
 
-let server_ip = "https://55d2-178-213-240-40.ngrok-free.app/"
+let server_ip = "https://b393-2a00-1fa1-c65d-bad4-45bd-369a-740d-6186.ngrok-free.app/"
 let user_id = sessionStorage.getItem("uuid")
 
 function request_data(method, success, fail = () => {}) {
@@ -47,6 +47,19 @@ function load_module(url) {
         document.getElementById('descriptionProfile').innerHTML = d["about"]
     })
     setTimeout(() => { 
+        if (url.includes('add.html')) {
+            console.log( document.getElementById("addExpend"))
+            document.getElementById("addExpend").onclick = () => {
+                let name = document.getElementById('expendName').value
+                let price = document.getElementById('expendPrice').value
+                let category = document.getElementById('expendCategory').value
+                request_data('new_expend/' + name + '/' + category + '/' + price + '/' + sessionStorage.getItem("uuid"))
+                document.getElementById('expendName').value = ''
+                document.getElementById('expendPrice').value = ''
+                document.getElementById('expendCategory').value = ''
+            }
+        }
+
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',

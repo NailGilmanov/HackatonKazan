@@ -1,22 +1,11 @@
 <div class="add-wrapper">
-    <h1 class="add--tiitle">Добавить <span>затрату</span>.</h2>
-    <h5 class="add--subtitle">Вы потратили</h5>
-    <input type="text">
+    <h1 class="add--tiitle">Добавить <span>трату</span>.</h2>
+    <h5 class="add--subtitle">Название траты</h5>
+    <input class="form-control" type="text" id='expendName' placeholder="Покупка продуктов" aria-label="default input example"><br>
+    <h5 class="add--subtitle">Вы потратили (₽)</h5>
+    <input class="form-control" type="text" id='expendPrice' placeholder="1500" aria-label="default input example"><br>
     <h5 class="add--subtitle">Категория покупки</h5>
-    <div class="custom-select">
-        <select>
-            <option value="0">Выберите категорию</option>
-            <option value="1">Спорт</option>
-            <option value="2">Киберспорт</option>
-            <option value="3">Наука</option>
-            <option value="4">Фитнес</option>
-            <option value="5">Концерт</option>
-            <option value="6">Развлечения</option>
-            <option value="7">Квест</option>
-            <option value="8">Кино</option>
-            <option value="9">Искусство</option>
-            <option value="10">Мультфильмы</option>
-            <option value="11">Другое</option>
-        </select>
-    </div>
+    <input class="form-control" type="text" id='expendCategory' placeholder="Супермаркеты" aria-label="default input example"><br>
+    <button type="button" class="btn btn-success" id="addExpend">Добавить</button>
+    <p class="success-message">Трата успешно добавлена, подробнее вы можете посмотреть на окне с расходами</p>
 </div>
