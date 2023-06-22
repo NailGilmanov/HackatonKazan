@@ -1,7 +1,7 @@
 let current_tab = ""
 let modular_content = document.getElementById("modular-content")
 
-let server_ip = "https://6c1e-2a00-1fa1-c65d-bad4-9c7e-b6e3-2447-492d.ngrok-free.app/"
+let server_ip = "https://0662-178-213-240-41.ngrok-free.app/"
 let user_id = sessionStorage.getItem("uuid")
 
 function request_data(method, success, fail = () => {}) {
@@ -61,45 +61,99 @@ function load_module(url) {
             }
         }
 
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Развлечения', 'Фастфуд', 'Торговые центры', 'Спорт', 'Путешествия'],
-                datasets: [{
-                    data: [27.92, 17.53, 14.94, 26.62, 10.99],
-                    backgroundColor: ['#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600'],
-                    borderWidth: 0.1 ,
-                    borderColor: '#ddd'
-                }]
-            },
-            options: {
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: {
-                        boxWidth: 20,
-                        fontColor: '#fff',
-                        padding: 15
-                    }
-                },
-                tooltips: {
-                    enabled: false
-                },
-                plugins: {
-                    datalabels: {
-                        color: '#fff',
-                        textAlign: 'center',
-                        font: {
-                            lineHeight: 1.6
-                        },
-                        formatter: function(value, ctx) {
-                            return ctx.chart.data.labels[ctx.dataIndex] + '\n' + value + '%';
-                        }
-                    }
+        if (url.includes('analysis.html')) {
+            console.log('analysis')
+            request_data('get_analitics/' + sessionStorage.getItem("uuid"), (d) => {
+                console.log(d)
+                let labels = []
+                let data = []
+                for (let key in d) {
+                    labels.push(key)
+                    data.push(d[key])
                 }
-            }
-        });
+                if (labels.length == 0) {
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Данные о затратах отсутствуют'],
+                            datasets: [{
+                                data: [100],
+                                backgroundColor: ['#7d7f7d'],
+                                borderWidth: 0.1 ,
+                                borderColor: '#ddd'
+                            }]
+                        },
+                        options: {
+                            legend: {
+                                display: true,
+                                position: 'bottom',
+                                labels: {
+                                    boxWidth: 20,
+                                    fontColor: '#fff',
+                                    padding: 15
+                                }
+                            },
+                            tooltips: {
+                                enabled: false
+                            },
+                            plugins: {
+                                datalabels: {
+                                    color: '#fff',
+                                    textAlign: 'center',
+                                    font: {
+                                        lineHeight: 1.6
+                                    },
+                                    formatter: function(value, ctx) {
+                                        return ctx.chart.data.labels[ctx.dataIndex] + '\n' + value + '%';
+                                    }
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: data,
+                                backgroundColor: ['#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600', '#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600', '#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600', '#e91e63', '#00e676', '#ff5722', '#1e88e5', '#ffd600'],
+                                borderWidth: 0.1 ,
+                                borderColor: '#ddd'
+                            }]
+                        },
+                        options: {
+                            legend: {
+                                display: true,
+                                position: 'bottom',
+                                labels: {
+                                    boxWidth: 20,
+                                    fontColor: '#fff',
+                                    padding: 15
+                                }
+                            },
+                            tooltips: {
+                                enabled: false
+                            },
+                            plugins: {
+                                datalabels: {
+                                    color: '#fff',
+                                    textAlign: 'center',
+                                    font: {
+                                        lineHeight: 1.6
+                                    },
+                                    formatter: function(value, ctx) {
+                                        return ctx.chart.data.labels[ctx.dataIndex] + '\n' + value + '%';
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            })
+        }
     }, 700);
 
     if (url !== current_tab) {
