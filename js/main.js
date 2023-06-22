@@ -19,10 +19,10 @@ function request_data(method, success, fail = () => {}) {
     request.send();
 }
 
-let video = document.getElementById('preview')
-setTimeout(() => {
-    video.style.marginLeft = "-150vw"
-}, 3000)
+// let video = document.getElementById('preview')
+// setTimeout(() => {
+//     video.style.marginLeft = "-150vw"
+// }, 3000)
 
 function animate_css(el, props, trans, callback = () => {}) {
     el.animate(props, trans).onfinish = (e) => {
@@ -38,14 +38,6 @@ function set_root_var(name, value) {
 }
 
 function load_module(url) {
-    console.log('work')
-    request_data('get_expend_some/' + sessionStorage.getItem("uuid"), (d) => {
-        document.getElementById('wasteOfAllTime').innerHTML = String(d) + " ₽" 
-    })
-    request_data("get_user/" + sessionStorage.getItem("uuid"), (d) => {
-        document.getElementById('nameProfile').innerHTML = d["name"]
-        document.getElementById('descriptionProfile').innerHTML = d["about"]
-    })
     setTimeout(() => { 
         if (url.includes('add.html')) {
             console.log( document.getElementById("addExpend"))
@@ -61,8 +53,18 @@ function load_module(url) {
             }
         }
 
+        if (url.includes('profile.html')) {
+            request_data("get_user/" + sessionStorage.getItem("uuid"), (d) => {
+                document.getElementById('nameProfile').innerHTML = d["name"]
+                document.getElementById('descriptionProfile').innerHTML = d["about"]
+            })
+        }
+
         if (url.includes('analysis.html')) {
-            console.log('analysis')
+            request_data('get_expend_some/' + sessionStorage.getItem("uuid"), (d) => {
+                document.getElementById('wasteOfAllTime').innerHTML = String(d) + " ₽" 
+            })
+
             request_data('get_analitics/' + sessionStorage.getItem("uuid"), (d) => {
                 console.log(d)
                 let labels = []
@@ -153,8 +155,16 @@ function load_module(url) {
                     });
                 }
             })
+
+            request_data('get_history/' + sessionStorage.getItem("uuid"), (d) => {
+                let wrap = document.querySelector('.analysis-history')
+                for (item in d) {
+                    console.log(item)
+                    wrap.innerHTML += '<div class="waste"><div class="left-part"><div class="waste--title">' + item['title'] + '</div><div class="waste--category">' + item['category'] + '</div></div><div class="right-part"><div class="waste--price removed">' + item["price"] + ' ₽</div><div class="waste--added-waste">Добавленная трата</div></div></div>'
+                }
+            })
         }
-    }, 700);
+    }, 400);
 
     if (url !== current_tab) {
         for (let i = 0; i < document.querySelectorAll(".modular").length; i++) {
