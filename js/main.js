@@ -47,10 +47,19 @@ function load_module(url) {
                 let price = document.getElementById('expendPrice').value
                 let category = document.getElementById('expendCategory').value
                 request_data('new_expend/' + name + '/' + category + '/' + price + '/' + sessionStorage.getItem("uuid"))
-                document.querySelector('.success-message').style.display = 'block'
+                document.querySelector('#sucExpend').style.display = 'block'
                 document.getElementById('expendName').value = ''
                 document.getElementById('expendPrice').value = ''
                 document.getElementById('expendCategory').value = ''
+            }
+
+            document.getElementById("addArr").onclick = () => {
+                let name = document.getElementById('arrName').value
+                let price = document.getElementById('arrPrice').value
+                request_data('new_arrival/' + name + '/' + price + '/' + sessionStorage.getItem("uuid"))
+                document.querySelector('#sucArr').style.display = 'block'
+                document.getElementById('arrName').value = ''
+                document.getElementById('arrPrice').value = ''
             }
         }
 
@@ -160,8 +169,11 @@ function load_module(url) {
             request_data('get_history/' + sessionStorage.getItem("uuid"), (d) => {
                 let wrap = document.querySelector('.analysis-history')
                 d.forEach(element => {
-                    console.log(element)
-                    wrap.innerHTML += '<div class="waste"><div class="left-part"><div class="waste--title">' + element['title'] + '</div><div class="waste--category">' + element['category'] + '</div></div><div class="right-part"><div class="waste--price removed">' + element["price"] + ' ₽</div><div class="waste--added-waste">Добавленная трата</div></div></div>'
+                    if (element["price"][0] === "-") {
+                        wrap.innerHTML += '<div class="waste"><div class="left-part"><div class="waste--title">' + element['title'] + '</div><div class="waste--category">' + element['category'] + '</div></div><div class="right-part"><div class="waste--price removed">' + element["price"] + ' ₽</div><div class="waste--added-waste">Добавленная трата</div></div></div>'
+                    } else {
+                        wrap.innerHTML += '<div class="waste"><div class="left-part"><div class="waste--title">' + element['title'] + '</div><div class="waste--category">' + element['category'] + '</div></div><div class="right-part"><div class="waste--price added">' + element["price"] + ' ₽</div><div class="waste--added-waste">Добавленная сумма</div></div></div>'
+                    }
                 });
             })
         }
