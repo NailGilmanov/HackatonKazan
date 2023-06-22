@@ -19,10 +19,10 @@ function request_data(method, success, fail = () => {}) {
     request.send();
 }
 
-// let video = document.getElementById('preview')
-// setTimeout(() => {
-//     video.style.marginLeft = "-150vw"
-// }, 3000)
+let video = document.getElementById('preview')
+setTimeout(() => {
+    video.style.marginLeft = "-150vw"
+}, 3000)
 
 function animate_css(el, props, trans, callback = () => {}) {
     el.animate(props, trans).onfinish = (e) => {
