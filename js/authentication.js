@@ -28,20 +28,24 @@ setTimeout(() => {
     action_button_to_login.onclick = () => {
         request_data(`login/${username.value}/${password.value}`, (d) => {
             console.log(d)
-            if (d !== false) {
+            if (d !== "false") {
                 sessionStorage.setItem("uuid", String(d))
                 load_module('/pages/analysis.html')
                 document.getElementById('bottom-bar').style.display = 'grid'
-            } 
+            } else {
+                location.href = "index.html"
+            }
         })
     }
     action_button_to_register.onclick = () => {
         request_data(`register/${username.value}/${password.value}/${password_insurance.value}/${description.value}`, (d) => {
             console.log(d)
-            if (d !== false) {
+            if (d !== "false") {
                 sessionStorage.setItem("uuid", String(d))
                 load_module('/pages/analysis.html')
                 document.getElementById('bottom-bar').style.display = 'grid'
+            } else {
+                location.href = "index.html"
             }
         })
     }

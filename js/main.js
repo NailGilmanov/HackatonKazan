@@ -1,7 +1,7 @@
 let current_tab = ""
 let modular_content = document.getElementById("modular-content")
 
-let server_ip = "https://a910-2a00-1fa1-c65d-bad4-783a-9219-948c-15b4.ngrok-free.app/"
+let server_ip = "https://cd29-2a00-1fa1-c65d-bad4-2d53-713e-a2a4-c012.ngrok-free.app/"
 let user_id = sessionStorage.getItem("uuid")
 
 function request_data(method, success, fail = () => {}) {
