@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Моби!</title>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="../css/authentication.css">
         <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -16,8 +15,11 @@
                 <input type="text" placeholder="Повторите пароль" id="password_insurance">
                 <textarea type="text" placeholder="Немного о себе" id="description"></textarea>
                 <p id="cringy-message">Уже есть аккаунт? <span onclick="sign_in()">Войти.</span></p>
-                <div id="jumbo-button" style="position: absolute; bottom: 100px; width: 90vw;">
+                <div id="jumbo-button-register" style="position: absolute; bottom: 100px; width: 90vw;">
                     Регистрация
+                </div>
+                <div id="jumbo-button-login" style="position: absolute; bottom: 100px; width: 90vw; display: none;">
+                    Войти
                 </div>
             </div>
         </div>
@@ -27,8 +29,9 @@
                 document.querySelector("h1").innerText = "Вход"
                 document.querySelector("#password_insurance").style.display = "none"
                 document.querySelector("#description").style.display = "none"
+                document.querySelector("#jumbo-button-register").style.display = "none"
+                document.querySelector("#jumbo-button-login").style.display = 'block'
                 document.querySelector("#cringy-message").innerHTML = "<p>Еще нет аккаунта? <span onclick='sign_up()'>Создать.</span></p>"
-                document.querySelector("#jumbo-button").innerText = "Вход"
             }
 
             function sign_up() {
@@ -36,35 +39,36 @@
                 document.querySelector("#password_insurance").style.display = "block"
                 document.querySelector("#description").style.display = "block"
                 document.querySelector("#cringy-message").innerHTML = "<p>Уже есть аккаунт? <span onclick='sign_in()'>Войти.</span></p>"
-                document.querySelector("#jumbo-button").innerText = "Регистрация"
+                document.querySelector("#jumbo-button-register").style.display = "block"
+                document.querySelector("#jumbo-button-login").style.display = 'none'
             }
 
-            let action_button = document.getElementById("jumbo-button")
+            let action_button_to_login = document.getElementById("jumbo-button-login")
+            let action_button_to_register = document.getElementById("jumbo-button-register")
             let username = document.getElementById("username")
             let password = document.getElementById("password")
             let password_insurance = document.getElementById("password_insurance")
             let description = document.getElementById("description")
 
-            action_button.onclick = () => {
-                if (action_button.innerText === "Войти") {
-                    request_data(`login/${username.value}/${password.value}`, (d) => {
-                        console.log(d)
-                        if (d !== false) {
-                            sessionStorage.setItem("uuid", String(d))
-                            location.href = "index.html"
-                            document.getElementById('bottom-bar').style.display = 'grid'
-                        } 
-                    })
-                } else {
-                    request_data(`register/${username.value}/${password.value}/${password_insurance.value}/${description.value}`, (d) => {
-                        console.log(d)
-                        if (d !== false) {
-                            sessionStorage.setItem("uuid", String(d))
-                            location.href = "index.html"
-                            document.getElementById('bottom-bar').style.display = 'grid'
-                        }
-                    })
-                }
+            action_button_to_login.onclick = () => {
+                request_data(`login/${username.value}/${password.value}`, (d) => {
+                    console.log(d)
+                    if (d !== false) {
+                        sessionStorage.setItem("uuid", String(d))
+                        location.href = "index.html"
+                        document.getElementById('bottom-bar').style.display = 'grid'
+                    } 
+                })
+            }
+            action_button_to_register.onclick = () => {
+                request_data(`register/${username.value}/${password.value}/${password_insurance.value}/${description.value}`, (d) => {
+                    console.log(d)
+                    if (d !== false) {
+                        sessionStorage.setItem("uuid", String(d))
+                        location.href = "index.html"
+                        document.getElementById('bottom-bar').style.display = 'grid'
+                    }
+                })
             }
         </script>
     </body>

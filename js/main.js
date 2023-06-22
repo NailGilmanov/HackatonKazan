@@ -19,6 +19,7 @@ function request_data(method, success, fail = () => {}) {
     request.send();
 }
 
+
 let video = document.getElementById('preview')
 setTimeout(() => {
     video.style.marginLeft = "-150vw"
@@ -162,10 +163,6 @@ function load_module(url) {
                     console.log(element)
                     wrap.innerHTML += '<div class="waste"><div class="left-part"><div class="waste--title">' + element['title'] + '</div><div class="waste--category">' + element['category'] + '</div></div><div class="right-part"><div class="waste--price removed">' + element["price"] + ' ₽</div><div class="waste--added-waste">Добавленная трата</div></div></div>'
                 });
-                // for (item in d) {
-                //     console.log(item)
-                //     wrap.innerHTML += '<div class="waste"><div class="left-part"><div class="waste--title">' + item['title'] + '</div><div class="waste--category">' + item['category'] + '</div></div><div class="right-part"><div class="waste--price removed">' + item["price"] + ' ₽</div><div class="waste--added-waste">Добавленная трата</div></div></div>'
-                // }
             })
         }
     }, 400);
