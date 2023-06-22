@@ -1,3 +1,5 @@
+
+
 .profile-wrapper {
     width: 90vw;
     height: 100vh;
@@ -62,7 +64,7 @@
 
 [contenteditable]:focus {
     outline-offset: 4px;
-    outline: 1px dashed rgba(80, 126, 217, 0.2);
+    outline: 1px dashed rgb(255, 255, 255);
 }
 
 .custom-select {
@@ -76,32 +78,28 @@
 }
 
 .wrapper__form {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .wrapper__h2 {
     position: relative;
-    font-family: 'Ruda', sans-serif;
     font-weight: 700;
-    font-size: 6.5vw;
-    line-height: 110px;
+    font-size: 5vw;
+    line-height: 60px;
     letter-spacing: 0.015em;
-    text-transform: lowercase;
     color: var(--color-additional);
-    margin-left: 75px;
+    margin-left: 10px;
     margin-bottom: 0;
 }
 
 .wrapper__text {
-    font-family: 'Ruda', sans-serif;
     font-weight: 400;
-    font-size: 1.3vw;
+    font-size: 4.3vw;
     line-height: 24px;
     letter-spacing: 0.095em;
-    text-transform: lowercase;
     color: var(--color-additional);
-    margin-left: 75px;
-    margin-bottom: 80px;
+    margin-left: 10px;
+    margin-bottom: 40px;
 }
 
 .form {
@@ -236,21 +234,30 @@ input[type=checkbox] {
 @media (max-width: 780px) {
     .input_1 {
         width: 70vw;
+        color: #ffffff;
     }
 
     .form {
         margin: auto 30px;
+        
     }
 
     .input_2 {
         width: 30vw;
+        
+        color: #ffffff;
     }
 
     .two_form {
         gap: 4.5vw;
+        
     }
     
     .btnWrapper {
        margin: 0 10px;
     }
 }
+
+.form {
+    margin-bottom: 18vh;
+}   
